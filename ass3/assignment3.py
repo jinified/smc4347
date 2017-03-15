@@ -163,7 +163,7 @@ def generateARFF(gt, arff_path='assignment3.arff'):
 # Plotting
 
 def plotMelFilters(n_filters=26, sampling_freq=22050, maxrange=12000,
-                   save_path=None):
+                   save_path=None, marker=None):
     """ Generate Mel filter bank plot
         maxrange: maximum frequency range to be plotted
         save_path: output plot destination
@@ -180,7 +180,7 @@ def plotMelFilters(n_filters=26, sampling_freq=22050, maxrange=12000,
     ax.set_ylabel("Amplitude")
     ax.set_xlim([0, maxrange])
     for i in range(r):
-        ax.plot(frequencies, fbank[i])
+        ax.plot(frequencies, fbank[i], marker=marker)
     if not save_path:
         plt.show()
     fig.savefig(save_path)
@@ -190,4 +190,4 @@ if __name__ == '__main__':
     gt = parseGroundTruth()
     generateARFF(gt, 'assignment3.arff')
     plotMelFilters(save_path='MelFilters_Full.png')
-    plotMelFilters(maxrange=300, save_path='MelFilters_300HZ.png')
+    plotMelFilters(maxrange=300, save_path='MelFilters_300HZ.png', marker='o')

@@ -104,6 +104,6 @@ def write_csv(data, path):
 if __name__ == '__main__':
     gt = parseGroundTruth()
     # Assignment 1A
-    generateCsvFeatures(gt)
+    # generateCsvFeatures(gt)
     # Assignment 1B
     generateARFF(gt)
